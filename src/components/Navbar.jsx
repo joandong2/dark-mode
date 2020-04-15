@@ -2,8 +2,6 @@ import React from "react";
 import useDarkMode from "../hooks/useDarkMode.js";
 
 const Navbar = () => {
-    //const [darkMode, setDarkMode] = useState(false);
-
     // useDarkMode is false on first mount
     const [darkMode, setDarkMode] = useDarkMode();
 
