@@ -24,18 +24,33 @@ const Coins = (props) => {
     };
 
     return (
-        <form onSubmit={submitHandler}>
-            <select id="coins" onChange={changeHandler} value={activeCoin}>
-                {coinsData.map((coin, index) => {
-                    return (
-                        <option key={index} value={coin.id}>
-                            {coin.name}
-                        </option>
-                    );
-                })}
-            </select>
-            <button type="submit">Get</button>
-        </form>
+        <div className="container">
+            <div className="row">
+                <div className="col-sm-6">
+                    <form onSubmit={submitHandler} className="form-inline">
+                        <div className="form-group mb-2">
+                            <select
+                                className="form-control"
+                                id="coins"
+                                onChange={changeHandler}
+                                value={activeCoin}
+                            >
+                                {coinsData.map((coin, index) => {
+                                    return (
+                                        <option key={index} value={coin.id}>
+                                            {coin.name}
+                                        </option>
+                                    );
+                                })}
+                            </select>
+                        </div>
+                        <button className="btn btn-primary mb-2" type="submit">
+                            Find
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
     );
 };
 export default Coins;
